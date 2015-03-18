@@ -18,7 +18,7 @@ public class FieldImplHelper {
     }
 
     public static void moveRowRight(int row, Transformer transformer, int[][] field) {
-        List<Integer> values = getValuesForLeftMove(row, field);
+        List<Integer> values = getValuesForRightMove(row, field);
         List<Integer> transformValues = transformer.transform(values);
 
         for (int i = field[row].length - 1; i >= 0; i--) {
