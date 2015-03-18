@@ -4,6 +4,7 @@ public abstract class Field {
 
     protected int rowCount;
     protected int colCount;
+    protected Transformer transformer;
 
     public int getRowCount() {
         return rowCount;
