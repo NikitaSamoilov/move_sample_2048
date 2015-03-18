@@ -22,7 +22,7 @@ public class FieldImplHelper {
         List<Integer> transformValues = transformer.transform(values);
 
         for (int i = field[row].length - 1; i >= 0; i--) {
-            field[row][i] = transformValues.get(i);
+            field[row][i] = transformValues.get(field.length - i - 1);
         }
     }
 
