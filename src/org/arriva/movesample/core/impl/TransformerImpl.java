@@ -24,7 +24,14 @@ public class TransformerImpl implements Transformer {
             if (currentValue == originalValues.get(originalIndex + 1)) {
                 values.add(currentValue * 2);
                 originalIndex += 2;
+            } else {
+                values.add(currentValue);
+                originalIndex += 1;
             }
+        }
+
+        if (originalIndex < originalValues.size()) {
+            values.add(originalValues.get(originalIndex));
         }
 
         if (values.size() < originalValues.size()) {

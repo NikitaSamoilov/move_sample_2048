@@ -1,7 +1,6 @@
 package org.arriva.movesample.core.impl;
 
 import org.arriva.movesample.core.Field;
-import org.arriva.movesample.core.Transformer;
 
 public class FieldImpl extends Field {
 
@@ -16,8 +15,9 @@ public class FieldImpl extends Field {
     @Override
     public void generateInitialState() {
         for (int i = 0; i < rowCount; i++) {
-            for (int j = 0; j <colCount; j++) {
-                field[i][j] = 0; //TODO: for me - make it by const
+            for (int j = 0; j < colCount; j++) {
+
+                field[i][j] = FieldImplHelper.getSomeValue(); //TODO: for me - make it by const
             }
         }
     }
@@ -44,5 +44,18 @@ public class FieldImpl extends Field {
     @Override
     public void moveUp() {
         //TODO: for Artem - implement it
+    }
+
+    @Override
+    public String toString() {
+        StringBuffer strBuffer = new StringBuffer();
+        for (int[] row : field) {
+            for (int value : row) {
+                strBuffer.append(String.format("%d ", value));
+            }
+            strBuffer.append("\n");
+        }
+
+        return strBuffer.toString();
     }
 }

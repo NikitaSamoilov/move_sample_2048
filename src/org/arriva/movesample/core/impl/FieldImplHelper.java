@@ -7,12 +7,24 @@ import java.util.List;
 
 public class FieldImplHelper {
 
+    public static int getSomeValue() {
+        int choice = (int)(Math.random() * 100);
+        if (choice <= 40) {
+            return 0;
+        }
+
+        if (choice >= 80) {
+            return 4;
+        }
+
+        return 2;
+    }
 
     public static void moveRowLeft(int row, Transformer transformer, int[][] field) {
         List<Integer> values = getValuesForLeftMove(row, field);
         List<Integer> transformValues = transformer.transform(values);
 
-        for (int i = 0; i > field[row].length; i++) {
+        for (int i = 0; i < field[row].length; i++) {
             field[row][i] = transformValues.get(i);
         }
     }
