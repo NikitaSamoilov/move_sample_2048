@@ -9,6 +9,7 @@ public class TransformerImpl implements Transformer {
 
     @Override
     public List<Integer> transform(List<Integer> originalValues) {
+        // TODO: for me - add a little bit of beauty and make const for "empty value"
         List<Integer> values = new ArrayList<Integer>();
         int originalIndex = 0;
 
@@ -21,7 +22,14 @@ public class TransformerImpl implements Transformer {
             }
 
             if (currentValue == originalValues.get(originalIndex + 1)) {
-                // TODO: for me - add logic
+                values.add(currentValue * 2);
+                originalIndex += 2;
+            }
+        }
+
+        if (values.size() < originalValues.size()) {
+            for (int i = values.size(); i < originalValues.size(); i++) {
+                values.add(0);
             }
         }
 
