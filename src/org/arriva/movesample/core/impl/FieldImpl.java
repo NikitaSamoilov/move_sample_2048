@@ -39,11 +39,17 @@ public class FieldImpl extends Field {
     @Override
     public void moveDown() {
         //TODO: for Artem - implement it
+        for (int i = 0; i < colCount; i++) {
+            FieldImplHelper.moveColDown(i, transformer, field);
+        }
     }
 
     @Override
     public void moveUp() {
         //TODO: for Artem - implement it
+        for (int i = 0; i < colCount; i++) {
+            FieldImplHelper.moveColUp(i, transformer, field);
+        }
     }
 
     @Override

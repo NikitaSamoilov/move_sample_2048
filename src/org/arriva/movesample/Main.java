@@ -13,8 +13,7 @@ public class Main {
         System.out.println(field.toString());
 
         Scanner scanner = new Scanner(System.in);
-         int a= 0;
-        a = a * 2;
+
         while (scanner.hasNext()){
             String input = scanner.next();
             if (!isControlKey(input)) {
@@ -23,16 +22,35 @@ public class Main {
 
             if (input.equals("a")) {
                 field.moveLeft();
-            } else {
+            } else if (input.equals("d")) {
                 field.moveRight();
+            } else if (input.equals("w")) {
+                field.moveUp();
+            } else {
+                field.moveDown();
             }
 
+            /*
+            //требует версии 1.7!
+            switch (input) {
+                case "a": field.moveLeft();
+                    break;
+                case "d": field.moveRight();
+                    break;
+                case "w": field.moveUp();
+                    break;
+                case "s": field.moveDown();
+                    break;
+                default: System.out.println("Use w, a, s or d keys!");
+            }
+            */
+
             System.out.println(field.toString());
-        }
+            }
     }
 
     public static boolean isControlKey(String input) {
-        if (input.equals("a") || input.equals("d")) {
+        if (input.equals("a") || input.equals("d") || input.equals("s") || input.equals("w")) {
             return true;
         }
 
