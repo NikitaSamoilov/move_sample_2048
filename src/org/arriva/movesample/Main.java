@@ -13,7 +13,8 @@ public class Main {
         System.out.println(field.toString());
 
         Scanner scanner = new Scanner(System.in);
-
+         int a= 0;
+        a = a * 2;
         while (scanner.hasNext()){
             String input = scanner.next();
             if (!isControlKey(input)) {
