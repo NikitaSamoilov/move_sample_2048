@@ -14,8 +14,22 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Insert 0 for standard mode, 1 - for modified mode");
+
+        String insert = scanner.next();
+        if (isModeKey(insert)) {
+            if (insert.equals("0")) {
+                field.setGameMode(0);
+            } else {
+                field.setGameMode(1);
+            }
+        }
+
+        System.out.println(field.getGameMode());
+
         while (scanner.hasNext()){
             String input = scanner.next();
+
             if (!isControlKey(input)) {
                 break;
             }
@@ -51,6 +65,14 @@ public class Main {
 
     public static boolean isControlKey(String input) {
         if (input.equals("a") || input.equals("d") || input.equals("s") || input.equals("w")) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static boolean isModeKey (String input) {
+        if (input.equals("0") || input.equals("1")) {
             return true;
         }
 
