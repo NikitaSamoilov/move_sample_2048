@@ -6,6 +6,17 @@ public abstract class Field {
     protected int colCount;
     protected Transformer transformer;
 
+    protected int gameMode;
+
+    public void setGameMode(int m) {
+        gameMode = m;
+    }
+
+    public int getGameMode() {
+        return gameMode;
+    }
+
+
     public int getRowCount() {
         return rowCount;
     }
