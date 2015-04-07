@@ -5,7 +5,7 @@ import org.arriva.movesample.core.Transformer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TransformerImpl implements Transformer {
+public class ModifiedTransformerImpl implements Transformer {
 
     @Override
     public List<Integer> transform(List<Integer> originalValues) {
