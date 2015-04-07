@@ -2,6 +2,8 @@ package org.arriva.movesample;
 
 import org.arriva.movesample.core.Field;
 import org.arriva.movesample.core.impl.FieldImpl;
+import org.arriva.movesample.core.impl.GameMode;
+import org.arriva.movesample.core.impl.TransformerFactory;
 
 import java.util.Scanner;
 
@@ -16,16 +18,18 @@ public class Main {
 
         System.out.println("Insert 0 for standard mode, 1 - for modified mode");
 
-//        String insert = scanner.next();
-//        if (isModeKey(insert)) {
-//            if (insert.equals("0")) {
-//                field.setGameMode(0);
-//            } else {
-//                field.setGameMode(1);
-//            }
-//        }
-//
-//        System.out.println(field.getGameMode());
+        GameMode gameMode = GameMode.STANDART;
+        String insert = scanner.next();
+        if (isModeKey(insert)) {
+            if (insert.equals("0")) {
+                gameMode = GameMode.STANDART;
+            } else {
+                gameMode = GameMode.MODIFIED;
+            }
+        }
+
+        System.out.println(gameMode);
+        field.setTransformer(TransformerFactory.getTransformer(gameMode));
 
         while (scanner.hasNext()){
             String input = scanner.next();
