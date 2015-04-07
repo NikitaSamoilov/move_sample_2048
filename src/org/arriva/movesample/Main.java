@@ -16,16 +16,16 @@ public class Main {
 
         System.out.println("Insert 0 for standard mode, 1 - for modified mode");
 
-        String insert = scanner.next();
-        if (isModeKey(insert)) {
-            if (insert.equals("0")) {
-                field.setGameMode(0);
-            } else {
-                field.setGameMode(1);
-            }
-        }
-
-        System.out.println(field.getGameMode());
+//        String insert = scanner.next();
+//        if (isModeKey(insert)) {
+//            if (insert.equals("0")) {
+//                field.setGameMode(0);
+//            } else {
+//                field.setGameMode(1);
+//            }
+//        }
+//
+//        System.out.println(field.getGameMode());
 
         while (scanner.hasNext()){
             String input = scanner.next();

@@ -9,7 +9,6 @@ public class FieldImpl extends Field {
     public FieldImpl(int rowCount, int colCount) {
         super(rowCount, colCount);
         field = new int[rowCount][colCount];
-        transformer = new TransformerImpl();
     }
 
     @Override
