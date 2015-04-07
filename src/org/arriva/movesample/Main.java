@@ -10,6 +10,8 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        int a = 1;
+                
         Field field = new FieldImpl(4, 4);
         field.generateInitialState();
         System.out.println(field.toString());
