@@ -10,8 +10,6 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int a = 1;
-                
         Field field = new FieldImpl(4, 4);
         field.generateInitialState();
         System.out.println(field.toString());
@@ -34,6 +32,8 @@ public class Main {
         field.setTransformer(TransformerFactory.getTransformer(gameMode));
 
         while (scanner.hasNext()){
+            //TODO: for Artem - add checking possibility of moves
+
             String input = scanner.next();
 
             if (!isControlKey(input)) {
@@ -49,6 +49,8 @@ public class Main {
             } else {
                 field.moveDown();
             }
+
+            field.generateRandomTile(); 
 
             /*
             //требует версии 1.7!

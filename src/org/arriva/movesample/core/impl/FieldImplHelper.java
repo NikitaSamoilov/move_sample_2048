@@ -20,6 +20,19 @@ public class FieldImplHelper {
         return 2;
     }
 
+    public static int getValueForRandomTile() {
+        int choice = (int)(Math.random() * 100);
+        if (choice >= 80) {
+            return 4;
+        }
+
+        return 2;
+    }
+
+    public static void setFreeRandomTile(int[][] field, int valueForNewTile) {
+        //TODO: for Artem - finish it
+    }
+
     public static void moveRowLeft(int row, Transformer transformer, int[][] field) {
         List<Integer> values = getValuesForLeftMove(row, field);
         List<Integer> transformValues = transformer.transform(values);

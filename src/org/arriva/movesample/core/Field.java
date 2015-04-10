@@ -29,6 +29,7 @@ public abstract class Field {
     }
 
     public abstract void generateInitialState();
+    public abstract void generateRandomTile();
     public abstract void moveLeft();
     public abstract void moveRight();
     public abstract void moveDown();

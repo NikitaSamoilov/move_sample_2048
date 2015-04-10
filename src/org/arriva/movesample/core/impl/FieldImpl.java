@@ -22,6 +22,12 @@ public class FieldImpl extends Field {
     }
 
     @Override
+    public void generateRandomTile() {
+        int valueForNewTile = FieldImplHelper.getValueForRandomTile();
+        FieldImplHelper.setFreeRandomTile(field, valueForNewTile);
+    }
+
+    @Override
     public void moveLeft() {
         for (int i = 0; i < rowCount; i++) {
             FieldImplHelper.moveRowLeft(i, transformer, field);
@@ -37,7 +43,6 @@ public class FieldImpl extends Field {
 
     @Override
     public void moveDown() {
-        //TODO: for Artem - implement it
         for (int i = 0; i < colCount; i++) {
             FieldImplHelper.moveColDown(i, transformer, field);
         }
@@ -45,7 +50,6 @@ public class FieldImpl extends Field {
 
     @Override
     public void moveUp() {
-        //TODO: for Artem - implement it
         for (int i = 0; i < colCount; i++) {
             FieldImplHelper.moveColUp(i, transformer, field);
         }
