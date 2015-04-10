@@ -32,6 +32,8 @@ public class Main {
         field.setTransformer(TransformerFactory.getTransformer(gameMode));
 
         while (scanner.hasNext()){
+            //TODO: for Artem - add checking possibility of moves
+
             String input = scanner.next();
 
             if (!isControlKey(input)) {
@@ -47,6 +49,8 @@ public class Main {
             } else {
                 field.moveDown();
             }
+
+            field.generateRandomTile(); 
 
             /*
             //требует версии 1.7!
