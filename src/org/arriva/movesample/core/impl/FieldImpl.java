@@ -6,9 +6,20 @@ public class FieldImpl extends Field {
 
     protected int[][] field;
 
+
     public FieldImpl(int rowCount, int colCount) {
         super(rowCount, colCount);
         field = new int[rowCount][colCount];
+    }
+
+    public boolean isMovesPossible(int[][] field) {
+        if (FieldImplHelper.hasFreeTiles(field)) {
+            return true;
+        } else if (FieldImplHelper.canMoveHor(field)) {
+            return true;
+        } else if (FieldImplHelper.canMoveVer(field)) {
+            return true;
+        } else return false;
     }
 
     @Override
@@ -23,8 +34,7 @@ public class FieldImpl extends Field {
 
     @Override
     public void generateRandomTile() {
-        int valueForNewTile = FieldImplHelper.getValueForRandomTile();
-        FieldImplHelper.setFreeRandomTile(field, valueForNewTile);
+        FieldImplHelper.setFreeRandomTile(field, FieldImplHelper.getValueForTile());
     }
 
     @Override
