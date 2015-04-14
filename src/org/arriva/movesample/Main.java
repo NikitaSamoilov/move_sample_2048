@@ -2,6 +2,7 @@ package org.arriva.movesample;
 
 import org.arriva.movesample.core.Field;
 import org.arriva.movesample.core.impl.FieldImpl;
+import org.arriva.movesample.core.impl.FieldImplHelper;
 import org.arriva.movesample.core.impl.GameMode;
 import org.arriva.movesample.core.impl.TransformerFactory;
 
@@ -11,7 +12,8 @@ public class Main {
 
     public static void main(String[] args) {
         Field field = new FieldImpl(4, 4);
-        field.generateInitialState();
+        //field.generateInitialState();
+        field.generateRandomTile();
         System.out.println(field.toString());
 
         Scanner scanner = new Scanner(System.in);
@@ -31,44 +33,46 @@ public class Main {
         System.out.println(gameMode);
         field.setTransformer(TransformerFactory.getTransformer(gameMode));
 
-        while (scanner.hasNext()){
-            //TODO: for Artem - add checking possibility of moves
+        while (field.isMovesPossible()) {
+            while (scanner.hasNext()) {
+                //TODO: for Artem - add checking possibility of moves
 
-            String input = scanner.next();
+                String input = scanner.next();
 
-            if (!isControlKey(input)) {
-                break;
-            }
-
-            if (input.equals("a")) {
-                field.moveLeft();
-            } else if (input.equals("d")) {
-                field.moveRight();
-            } else if (input.equals("w")) {
-                field.moveUp();
-            } else {
-                field.moveDown();
-            }
-
-            field.generateRandomTile(); 
-
-            /*
-            //требует версии 1.7!
-            switch (input) {
-                case "a": field.moveLeft();
+                if (!isControlKey(input)) {
                     break;
-                case "d": field.moveRight();
-                    break;
-                case "w": field.moveUp();
-                    break;
-                case "s": field.moveDown();
-                    break;
-                default: System.out.println("Use w, a, s or d keys!");
-            }
-            */
+                }
 
-            System.out.println(field.toString());
+                if (input.equals("a")) {
+                    field.moveLeft();
+                } else if (input.equals("d")) {
+                    field.moveRight();
+                } else if (input.equals("w")) {
+                    field.moveUp();
+                } else {
+                    field.moveDown();
+                }
+
+                field.generateRandomTile();
+
+                /*
+                //требует версии 1.7!
+                switch (input) {
+                    case "a": field.moveLeft();
+                        break;
+                    case "d": field.moveRight();
+                        break;
+                    case "w": field.moveUp();
+                        break;
+                    case "s": field.moveDown();
+                        break;
+                    default: System.out.println("Use w, a, s or d keys!");
+                }
+                */
+
+                System.out.println(field.toString());
             }
+        }
     }
 
     public static boolean isControlKey(String input) {

@@ -6,7 +6,6 @@ public abstract class Field {
     protected int colCount;
     protected Transformer transformer;
 
-
     public int getRowCount() {
         return rowCount;
     }
@@ -34,5 +33,6 @@ public abstract class Field {
     public abstract void moveRight();
     public abstract void moveDown();
     public abstract void moveUp();
+    public abstract boolean isMovesPossible();
 
 }
