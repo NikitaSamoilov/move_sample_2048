@@ -8,7 +8,7 @@ public class TransformerFactory {
     public static Transformer getTransformer(GameMode gameMode) {
         switch (gameMode) {
             case STANDART:
-                return null;
+                return new StandartTransformerImpl();
             case MODIFIED:
                 return new ModifiedTransformerImpl();
         }
