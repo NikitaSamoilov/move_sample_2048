@@ -12,8 +12,8 @@ public class Main {
 
     public static void main(String[] args) {
         Field field = new FieldImpl(4, 4);
-        //field.generateInitialState();
-        field.generateRandomTile();
+        field.generateInitialState();
+        //field.generateRandomTile();
         System.out.println(field.toString());
 
         Scanner scanner = new Scanner(System.in);
