@@ -14,13 +14,10 @@ public class FieldImpl extends Field {
 
     @Override
     public boolean isMovesPossible() {
-        if (FieldImplHelper.hasFreeTiles(field)) {
+        if ((FieldImplHelper.hasFreeTiles(field)) || (FieldImplHelper.canMoveHor(field)) || (FieldImplHelper.canMoveVer(field))) {
             return true;
-        } else if (FieldImplHelper.canMoveHor(field)) {
-            return true;
-        } else if (FieldImplHelper.canMoveVer(field)) {
-            return true;
-        } else return false;
+        }
+        return false;
     }
 
     @Override
@@ -77,5 +74,10 @@ public class FieldImpl extends Field {
         }
 
         return strBuffer.toString();
+    }
+
+    @Override
+    public void processInput(String input) {
+        // TODO: implement it
     }
 }

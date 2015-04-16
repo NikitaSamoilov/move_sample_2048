@@ -1,6 +1,6 @@
 package org.arriva.movesample.core;
 
-public abstract class Field {
+public abstract class Field implements InputObserver {
 
     protected int rowCount;
     protected int colCount;
