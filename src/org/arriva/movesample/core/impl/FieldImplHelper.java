@@ -154,7 +154,7 @@ public class FieldImplHelper {
     }
 
     public static void moveColUp(int col, Transformer transformer, int[][] field) {
-        List<Integer> values = getValuesForDownMove(col, field);
+        List<Integer> values = getValuesForUpMove(col, field);
         List<Integer> transformValues = transformer.transform(values);
 
         for (int i = 0; i < field[col].length; i++) {
@@ -163,7 +163,7 @@ public class FieldImplHelper {
         }
 
     public static void moveColDown (int col, Transformer transformer, int[][] field) {
-        List<Integer> values = getValuesForUpMove(col, field);
+        List<Integer> values = getValuesForDownMove(col, field);
         List<Integer> transformValues = transformer.transform(values);
 
         for (int i = field[col].length-1; i>= 0; i--) {
@@ -189,7 +189,7 @@ public class FieldImplHelper {
         return values;
     }
 
-    private static List<Integer> getValuesForDownMove(int col, int[][] field) {
+    private static List<Integer> getValuesForUpMove(int col, int[][] field) {
         List<Integer> values = new ArrayList<Integer>();
         for (int i = 0; i < field[col].length; i++) {
             values.add(field[i][col]);
@@ -197,7 +197,7 @@ public class FieldImplHelper {
         return values;
     }
 
-    private static List<Integer> getValuesForUpMove(int col, int[][] field) {
+    private static List<Integer> getValuesForDownMove(int col, int[][] field) {
         List<Integer> values = new ArrayList<Integer>();
         for (int i = field[col].length - 1; i >= 0; i--) {
             values.add(field[i][col]);
