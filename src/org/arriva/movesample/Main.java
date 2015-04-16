@@ -33,10 +33,10 @@ public class Main {
         System.out.println(gameMode);
         field.setTransformer(TransformerFactory.getTransformer(gameMode));
 
-        while (field.isMovesPossible()) {
-            while (scanner.hasNext()) {
-                //TODO: for Artem - add checking possibility of moves
+        boolean isPossible = true;
 
+        while (scanner.hasNext()) {
+            while (isPossible) {
                 String input = scanner.next();
 
                 if (!isControlKey(input)) {
@@ -71,6 +71,8 @@ public class Main {
                 */
 
                 System.out.println(field.toString());
+                isPossible = field.isMovesPossible();
+                System.out.println(isPossible);
             }
         }
     }

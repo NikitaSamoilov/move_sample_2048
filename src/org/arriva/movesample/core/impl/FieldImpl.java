@@ -12,7 +12,8 @@ public class FieldImpl extends Field {
         field = new int[rowCount][colCount];
     }
 
-    public boolean isMovesPossible(int[][] field) {
+    @Override
+    public boolean isMovesPossible() {
         if (FieldImplHelper.hasFreeTiles(field)) {
             return true;
         } else if (FieldImplHelper.canMoveHor(field)) {
