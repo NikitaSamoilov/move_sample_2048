@@ -20,9 +20,17 @@ public class StandartTransformerImpl implements Transformer {
                 continue;
             }
 
-            if (currentValue == originalValues.get(originalIndex + 1)) {
+            /*if (currentValue == originalValues.get(originalIndex + 1)) {
                 values.add(currentValue * 2);
                 originalIndex += 2;
+            } else {
+                values.add(currentValue);
+                originalIndex += 1;
+            }*/
+
+            if (originalIndex != 0) & (currentValue == originalValues.get(originalIndex - 1)) {
+                values.add(currentValue * 2);
+                originalIndex += 1;
             } else {
                 values.add(currentValue);
                 originalIndex += 1;
