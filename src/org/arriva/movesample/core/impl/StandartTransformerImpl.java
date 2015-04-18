@@ -9,6 +9,7 @@ public class StandartTransformerImpl implements Transformer {
 
     @Override
     public List<Integer> transform(List<Integer> originalValues) {
+        //TODO: It must be separated
         int maxSize = originalValues.size();
         originalValues = getOnlyNotEmptyValues(originalValues);
         List<Integer> values = new ArrayList<Integer>();
