@@ -29,16 +29,31 @@ public class Game {
                 processModeChoosing(input);
                 break;
             case PLAYING:
-                gameHelper.notify(input);
-                field.generateRandomTile();
-                System.out.println(field.toString());
+                processPlaying(input);
+                break;
+            case FINISH:
+                processFinish();
                 break;
             default:
                 break;
         }
     }
 
-    private void processModeChoosing(String input) {
+    private void processFinish() {
+        System.out.println("That's all");
+    }
+
+    protected void processPlaying(String input) {
+        gameHelper.notify(input);
+        field.generateRandomTile();
+        System.out.println(field.toString());
+
+        if (!field.isMovesPossible()) {
+            gameState = GameState.FINISH;
+        }
+    }
+
+    protected void processModeChoosing(String input) {
         FieldTransformerMode fieldTransformerMode;
         if (input.equals("0")) {
             fieldTransformerMode = FieldTransformerMode.STANDART;
@@ -56,8 +71,8 @@ public class Game {
         gameState = GameState.PLAYING;
     }
 
-    private void processInitialization() {
-        System.out.println("== 2048 ==\n");
+    protected void processInitialization() {
+        System.out.println("== 2048 ==\n\n");
         System.out.println("Insert 0 for standard mode, 1 - for modified mode");
         gameState = GameState.MODE_CHOOSING;
     }
