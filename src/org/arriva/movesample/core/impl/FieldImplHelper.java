@@ -160,7 +160,7 @@ public class FieldImplHelper {
         for (int i = 0; i < field[col].length; i++) {
             field[i][col] = transformValues.get(i);
         }
-        }
+    }
 
     public static void moveColDown (int col, Transformer transformer, int[][] field) {
         List<Integer> values = getValuesForDownMove(col, field);

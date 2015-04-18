@@ -1,6 +1,6 @@
 package org.arriva.movesample.core.impl;
 
 
-public enum GameMode {
+public enum FieldTransformerMode {
     STANDART, MODIFIED;
 }
