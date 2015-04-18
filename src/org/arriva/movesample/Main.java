@@ -34,24 +34,27 @@ public class Main {
         field.setTransformer(TransformerFactory.getTransformer(gameMode));
 
         boolean isPossible = true;
+        GameHelper gameHelper = new GameHelper();
+        gameHelper.addObserver(field);
 
         while (scanner.hasNext()) {
             while (isPossible) {
                 String input = scanner.next();
+                gameHelper.notify(input);
 
-                if (!isControlKey(input)) {
-                    break;
-                }
-
-                if (input.equals("a")) {
-                    field.moveLeft();
-                } else if (input.equals("d")) {
-                    field.moveRight();
-                } else if (input.equals("w")) {
-                    field.moveUp();
-                } else {
-                    field.moveDown();
-                }
+//                if (!isControlKey(input)) {
+//                    break;
+//                }
+//
+//                if (input.equals("a")) {
+//                    field.moveLeft();
+//                } else if (input.equals("d")) {
+//                    field.moveRight();
+//                } else if (input.equals("w")) {
+//                    field.moveUp();
+//                } else {
+//                    field.moveDown();
+//                }
 
                 field.generateRandomTile();
 

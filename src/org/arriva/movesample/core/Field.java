@@ -27,6 +27,28 @@ public abstract class Field implements InputObserver {
         this.colCount = colCount;
     }
 
+    @Override
+    public void processInput(String input) {
+        FieldControlInputs controlInput =
+                FieldControlInputs.convertStringToControlInput(input);
+        switch (controlInput) {
+            case UP:
+                moveUp();
+                break;
+            case DOWN:
+                moveDown();
+                break;
+            case RIGHT:
+                moveRight();
+                break;
+            case LEFT:
+                moveLeft();
+                break;
+            case UNDEFINED:
+                break;
+        }
+    }
+
     public abstract void generateInitialState();
     public abstract void generateRandomTile();
     public abstract void moveLeft();

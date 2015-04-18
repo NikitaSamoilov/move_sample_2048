@@ -76,8 +76,4 @@ public class FieldImpl extends Field {
         return strBuffer.toString();
     }
 
-    @Override
-    public void processInput(String input) {
-        // TODO: implement it
-    }
 }
