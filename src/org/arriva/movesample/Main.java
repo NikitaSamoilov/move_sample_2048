@@ -2,8 +2,7 @@ package org.arriva.movesample;
 
 import org.arriva.movesample.core.Field;
 import org.arriva.movesample.core.impl.FieldImpl;
-import org.arriva.movesample.core.impl.FieldImplHelper;
-import org.arriva.movesample.core.impl.GameMode;
+import org.arriva.movesample.core.impl.FieldTransformerMode;
 import org.arriva.movesample.core.impl.TransformerFactory;
 
 import java.util.Scanner;
@@ -19,13 +18,13 @@ public class Main {
 
         System.out.println("Insert 0 for standard mode, 1 - for modified mode");
 
-        GameMode gameMode = GameMode.STANDART;
+        FieldTransformerMode gameMode = FieldTransformerMode.STANDART;
         String insert = scanner.next();
         if (isModeKey(insert)) {
             if (insert.equals("0")) {
-                gameMode = GameMode.STANDART;
+                gameMode = FieldTransformerMode.STANDART;
             } else {
-                gameMode = GameMode.MODIFIED;
+                gameMode = FieldTransformerMode.MODIFIED;
             }
         }
 

@@ -5,7 +5,7 @@ import org.arriva.movesample.core.Transformer;
 
 public class TransformerFactory {
 
-    public static Transformer getTransformer(GameMode gameMode) {
+    public static Transformer getTransformer(FieldTransformerMode gameMode) {
         switch (gameMode) {
             case STANDART:
                 return new StandartTransformerImpl();
