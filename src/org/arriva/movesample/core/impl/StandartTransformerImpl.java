@@ -9,6 +9,8 @@ public class StandartTransformerImpl implements Transformer {
 
     @Override
     public List<Integer> transform(List<Integer> originalValues) {
+        int maxSize = originalValues.size();
+        originalValues = getOnlyNotEmptyValues(originalValues);
         List<Integer> values = new ArrayList<Integer>();
         int originalIndex = 0;
 
@@ -33,12 +35,23 @@ public class StandartTransformerImpl implements Transformer {
             values.add(originalValues.get(originalIndex));
         }
 
-        if (values.size() < originalValues.size()) {
-            for (int i = values.size(); i < originalValues.size(); i++) {
+        if (values.size() < maxSize) {
+            for (int i = values.size(); i < maxSize; i++) {
                 values.add(0);
             }
         }
 
         return values;
+    }
+
+    private List<Integer> getOnlyNotEmptyValues(List<Integer> values) {
+        List<Integer> notEmptyValues = new ArrayList<Integer>();
+        for (int value : values) {
+            if (value != 0) {
+                notEmptyValues.add(value);
+            }
+        }
+
+        return notEmptyValues;
     }
 }
