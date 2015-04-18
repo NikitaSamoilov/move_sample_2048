@@ -23,6 +23,7 @@ public class GameHelper implements InputObservable {
 
     @Override
     public void notify(String input) {
+        System.out.print("NOTIFY " + input);
         for (InputObserver observer : inputObservers) {
             observer.processInput(input);
         }

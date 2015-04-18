@@ -27,21 +27,21 @@ public enum FieldControlInputs {
             return UNDEFINED;
         }
 
-        if (input.equals(UP)) {
+        if (input.equals(UP.toString())) {
             return UP;
         }
-        if (input.equals(DOWN)) {
+        if (input.equals(DOWN.toString())) {
             return DOWN;
         }
-        if (input.equals(RIGHT)) {
+        if (input.equals(RIGHT.toString())) {
             return RIGHT;
         }
         return LEFT;
     }
 
     public static boolean isContolInput(String input) {
-        if (input.equals(UP) || input.equals(DOWN) ||
-                input.equals(RIGHT) || input.equals(LEFT)) {
+        if (input.equals(UP.toString()) || input.equals(DOWN.toString()) ||
+                input.equals(RIGHT.toString()) || input.equals(LEFT.toString())) {
             return true;
         }
 
