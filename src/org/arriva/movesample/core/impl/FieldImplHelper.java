@@ -131,6 +131,7 @@ public class FieldImplHelper {
                 }
                 if (k == r) break;
             }
+            if (k == r) break;
         }
 
     }
