@@ -31,7 +31,7 @@ public class StandartTransformerImpl implements Transformer {
                 originalIndex += 1;
             }*/
 
-            if (originalIndex != 0) & (currentValue == originalValues.get(originalIndex - 1)) {
+            if ((originalIndex != 0) & (currentValue == originalValues.get(originalIndex - 1))) {
                 values.add(currentValue * 2);
                 originalIndex += 1;
             } else {
