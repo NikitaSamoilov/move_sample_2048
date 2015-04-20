@@ -63,7 +63,8 @@ public class Game {
 
         System.out.println(fieldTransformerMode);
         field.setTransformer(TransformerFactory.getTransformer(fieldTransformerMode));
-        field.generateInitialState();
+        //field.generateInitialState();
+        field.generateRandomTile();
         System.out.println(field.toString());
 
         gameHelper.addObserver(field);
