@@ -17,26 +17,34 @@ public class StandartTransformerImpl implements Transformer {
 
         while (originalIndex < originalValues.size() - 1) {
             int currentValue = originalValues.get(originalIndex);
+            int steps = 1;
 
             if (currentValue == 0) {
                 originalIndex += 1;
                 continue;
             }
 
-            /*if (currentValue == originalValues.get(originalIndex + 1)) {
-                values.add(currentValue * 2);
-                originalIndex += 2;
-            } else {
-                values.add(currentValue);
-                originalIndex += 1;
-            }*/
+            while (steps <= (originalValues.size() - originalIndex)) {
+                if ((currentValue != originalValues.get(originalIndex + steps)) && (originalValues.get(originalIndex + steps) != 0)) {
+                    values.add(currentValue);
+                    originalIndex = originalIndex + steps;
+                    break;
+                }
 
-            if ((originalIndex != 0) && (currentValue == originalValues.get(originalIndex - 1))) {
-                values.add(currentValue * 2);
-                originalIndex += 1;
-            } else {
-                values.add(currentValue);
-                originalIndex += 1;
+                if (currentValue == originalValues.get(originalIndex + steps)) {
+                    values.add(currentValue * 2);
+                    originalIndex = originalIndex + steps +1;
+                    break;
+                }
+
+                if ( (steps == (originalValues.size() - originalIndex)) && (currentValue != originalValues.get(originalIndex + steps)) ) {
+                    values.add(currentValue);
+                    break;
+                }
+
+                if (originalValues.get(originalIndex + steps) == 0) {
+                    steps++;
+                }
             }
         }
 
