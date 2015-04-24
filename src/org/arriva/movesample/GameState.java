@@ -4,5 +4,7 @@ public enum GameState {
     INITIALIZATION,
     MODE_CHOOSING,
     PLAYING,
-    FINISH
+    FINISH,
+    TEST,
+    WORK_CHOOSING
 }

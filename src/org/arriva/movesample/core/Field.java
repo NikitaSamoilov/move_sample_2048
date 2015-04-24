@@ -56,5 +56,8 @@ public abstract class Field implements InputObserver {
     public abstract void moveDown();
     public abstract void moveUp();
     public abstract boolean isMovesPossible();
-
+    public abstract boolean moveLeft(int[][] testField, int[][] referenseField);
+    public abstract boolean moveRight(int[][] testField, int[][] referenseField);
+    public abstract boolean moveDown(int[][] testField, int[][] referenseField);
+    public abstract boolean moveUp(int[][] testField, int[][] referenseField);
 }
